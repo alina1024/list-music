@@ -151,13 +151,10 @@ prev_btn.addEventListener("click", () => {
 });
 renderizar_canciones(canciones);
 
-const search_input = document.getElementById("search-input")
+const search_input = document.getElementById("search-input");
 
-search_input.addEventListener("keyup", () => {
+search_input.addEventListener("keyup", (event) => {
  let  filtrado = canciones.filter((e) =>
-  e.title  
-     .toLocaleLowerCase()
-     .includes(search_input.value.toString().toLocaleLowerCase())
-     );
+  e.title.toLocaleLowerCase().includes(search_input.value.toString().toLocaleLowerCase()));
      renderizer_canciones(filtrado);
 });
