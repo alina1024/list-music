@@ -148,11 +148,16 @@ prev_btn.addEventListener("click", () => {
         index--;
         play_audio(index)
     }
-})
+});
+renderizar_canciones(canciones);
 
 const search_input = document.getElementById("search-input")
 
-search_input.addEventListener("keyup", (prevent) => {
-    console.log(prevent.key.toLowerCase)
-})
- 
+search_input.addEventListener("keyup", () => {
+ let  filtrado = canciones.filter((e) =>
+  e.title  
+     .toLocaleLowerCase()
+     .includes(search_input.value.toString().toLocaleLowerCase())
+     );
+     renderizer_canciones(filtrado);
+});
